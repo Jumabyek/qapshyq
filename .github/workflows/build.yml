@@ -1,13 +1,14 @@
 # Builds the Windows installer and the macOS .dmg on GitHub's computers.
 #  - Run it by hand: GitHub -> Actions -> "Build installers" -> Run workflow
-#  - Or push a version tag:  git tag v1.0.0 && git push origin v1.0.0
-#    (a tag also creates a GitHub Release with both files attached)
+#    (the files appear under the run as "artifacts")
+#  - Or publish a release: GitHub -> Releases -> Draft a new release -> tag v1.0.1 -> Publish.
+#    Both installers are then built and attached to that release automatically.
 name: Build installers
 
 on:
   workflow_dispatch:
-  push:
-    tags: ["v*"]
+  release:
+    types: [published]
 
 permissions:
   contents: write
