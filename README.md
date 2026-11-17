@@ -6,6 +6,18 @@ all offline. Your files never leave your computer.
 
 ![Qapshyq — archive view](docs/screenshots/archive-dark.png)
 
+## Download
+**[⬇ Download the latest version](https://github.com/Jumabyek/qapshyq/releases/latest)**
+
+| System | File | Requirements |
+|---|---|---|
+| Windows | `Qapshyq-Setup-1.0.0.exe` | Windows 10 / 11, 64-bit |
+| macOS | `Qapshyq-1.0.0-mac.dmg` | Apple Silicon (M1 or newer), macOS 14+ |
+
+The installers are not code-signed yet, so the system shows a warning the first time:
+- **Windows:** "Windows protected your PC" → **More info** → **Run anyway**.
+- **macOS:** "Qapshyq Not Opened" → **Done**, then **System Settings → Privacy & Security** → **Open Anyway**.
+
 ## Features
 - **Drag & drop**: drop an archive to open it, drop files or folders to compress them
 - **Extract** ZIP, RAR (incl. RAR5 and multi-part), 7Z, TAR, GZ, TAR.GZ/XZ/BZ2 — everything or only selected files
