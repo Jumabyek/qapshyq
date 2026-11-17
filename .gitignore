@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+# 7-Zip engine binaries are downloaded by the setup scripts (license file is kept)
+bin/7z.exe
+bin/7z.dll
+bin/7zz
+.DS_Store

@@ -1,0 +1,53 @@
+# Builds the Windows installer and the macOS .dmg on GitHub's computers.
+#  - Run it by hand: GitHub -> Actions -> "Build installers" -> Run workflow
+#  - Or push a version tag:  git tag v1.0.0 && git push origin v1.0.0
+#    (a tag also creates a GitHub Release with both files attached)
+name: Build installers
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build app and installer
+        shell: cmd
+        run: |
+          choco install innosetup -y --no-progress
+          scripts\build_windows.bat
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Qapshyq-Windows
+          path: dist/Qapshyq-Setup-*.exe
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/Qapshyq-Setup-*.exe
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build app and dmg
+        run: bash scripts/build_mac.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Qapshyq-macOS
+          path: dist/Qapshyq-*-mac.dmg
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/Qapshyq-*-mac.dmg
