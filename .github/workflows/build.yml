@@ -35,6 +35,27 @@ jobs:
         with:
           name: Qapshyq-Windows
           path: dist/Qapshyq-Setup-*.exe
+      - name: Build MSIX for the Microsoft Store
+        shell: pwsh
+        run: ./scripts/build_msix.ps1
+      - name: Check that the MSIX installs and starts
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          # Developer mode lets Windows install an unsigned package (test only).
+          reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v AllowDevelopmentWithoutDevLicense /d 1
+          Add-AppxPackage -Register build\msix\AppxManifest.xml
+          $pkg = Get-AppxPackage *Qapshyq*
+          $pkg | Format-List Name, Version, PackageFamilyName, Status
+          Start-Process "shell:AppsFolder\$($pkg.PackageFamilyName)!Qapshyq"
+          Start-Sleep -Seconds 10
+          $proc = Get-Process Qapshyq -ErrorAction SilentlyContinue
+          if ($proc) { Write-Host "Qapshyq is running from the MSIX package (pid $($proc.Id))"; $proc | Stop-Process -Force }
+          else { Write-Error "Qapshyq did not start from the MSIX package" }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Qapshyq-Windows-Store-MSIX
+          path: dist/Qapshyq-*.msix
       - uses: softprops/action-gh-release@v2
         if: github.event_name == 'release' || inputs.release_tag != ''
         with:

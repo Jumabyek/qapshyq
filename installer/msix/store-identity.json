@@ -1,0 +1,6 @@
+{
+  "_comment": "Replace these test values with the ones from Partner Center -> Product identity before uploading to the Store.",
+  "identity_name": "Qapshyq.Test",
+  "publisher": "CN=Qapshyq Test",
+  "publisher_display_name": "Qapshyq"
+}
