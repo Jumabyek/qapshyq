@@ -1,6 +1,6 @@
 {
-  "_comment": "Replace these test values with the ones from Partner Center -> Product identity before uploading to the Store.",
-  "identity_name": "Qapshyq.Test",
-  "publisher": "CN=Qapshyq Test",
-  "publisher_display_name": "Qapshyq"
+  "_comment": "Values from Partner Center -> Qapshyq (Store ID 9N8M5LXDDBNL) -> Product identity.",
+  "identity_name": "Byjuma.Qapshyq",
+  "publisher": "CN=ED2BF041-FE80-46B7-BEB1-08B6344DB2F1",
+  "publisher_display_name": "Byjuma"
 }

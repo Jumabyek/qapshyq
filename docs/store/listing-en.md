@@ -1,5 +1,7 @@
 # Microsoft Store listing — English (en-us)
 
+Store page: https://apps.microsoft.com/detail/9N8M5LXDDBNL  (Store ID 9N8M5LXDDBNL)
+
 Copy each block into Partner Center → your app → Store listings → English.
 
 ## Product name
@@ -47,7 +49,7 @@ extract
 compress
 
 ## Copyright and trademark info
-© 2026 Jumabyek
+© 2026 Byjuma
 
 ## Additional license terms
 Qapshyq is free and open source under the MIT license. It includes 7-Zip (GNU LGPL with the unRAR restriction) and Qt for Python (LGPL v3). https://github.com/Jumabyek/qapshyq/blob/main/THIRD_PARTY_NOTICES.md
