@@ -7,6 +7,16 @@ all offline. Your files never leave your computer.
 ![Qapshyq — archive view](docs/screenshots/archive-dark.png)
 
 ## Download
+
+### Windows — Microsoft Store (recommended)
+<a href="https://apps.microsoft.com/detail/9N8M5LXDDBNL?referrer=appbadge&mode=full" target="_blank" rel="noopener noreferrer">
+  <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" alt="Get it from Microsoft"/>
+</a>
+
+Free, signed by Microsoft (no security warnings) and updates automatically.
+Windows 10 / 11, 64-bit.
+
+### Direct download
 **[⬇ Download the latest version](https://github.com/Jumabyek/qapshyq/releases/latest)**
 
 | System | File | Requirements |
@@ -14,7 +24,7 @@ all offline. Your files never leave your computer.
 | Windows | `Qapshyq-Setup-1.0.0.exe` | Windows 10 / 11, 64-bit |
 | macOS | `Qapshyq-1.0.0-mac.dmg` | Apple Silicon (M1 or newer), macOS 14+ |
 
-The installers are not code-signed yet, so the system shows a warning the first time:
+The direct-download installers are not code-signed yet, so the system shows a warning the first time:
 - **Windows:** "Windows protected your PC" → **More info** → **Run anyway**.
 - **macOS:** "Qapshyq Not Opened" → **Done**, then **System Settings → Privacy & Security** → **Open Anyway**.
 
